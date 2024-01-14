@@ -1,0 +1,76 @@
+
+// 1 Point:- POST request ko PUT request m convert krne k liye hum method override ka package install krte h.
+
+    npm i method-override
+
+<form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+
+
+edit.ejs
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+</head>
+
+<body>
+    <h3>Create your listing</h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+
+        <input name="listing[image]" value="<%= listing.image %>">
+        <br> <br>
+
+        <input name="listing[title]" value="<%= listing.title %>" type="text">
+        <br> <br>
+
+        <textarea name="listing[description]"><%= listing.description %></textarea>
+        <br> <br>
+
+        <input name="listing[price]" value="<%= listing.price %>" type="number">
+        <br> <br>
+
+        <input name="listing[country]" value="<%= listing.country %>" type="text">
+        <br> <br>
+
+        <input name="listing[location]" value="<%= listing.location %>" type="text">
+        <br> <br>
+        <button>Edit</button>
+    </form>
+</body>
+
+</html>
+
+
+
+// new.ejs 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+</head>
+<body>
+    <h3>Create a New listing</h3>
+    <form method="POST" action="/listings">
+        <input name="listing[title]" placeholder="enter title" type="text">
+        <br> <br>
+        <textarea name="listing[description]" placeholder="enter description" type="text"></textarea>
+        <br> <br>
+        <input name="listing[image]" placeholder="enter image URL/Link" type="text">
+        <br> <br>
+        <input name="listing[price]" placeholder="enter price" type="number">
+        <br> <br>
+        <input name="listing[country]" placeholder="enter country" type="text">
+        <br> <br>
+        <input name="listing[location]" placeholder="listing[enter location]" type="text">
+        <br> <br>
+        <button>Add</button>
+    </form>
+</body>
+</html>

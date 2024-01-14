@@ -1,0 +1,34 @@
+// 1.database ko delete krne k liye in mongoose //
+
+db.chats.deleteMany({})
+
+// 2. Add database after modification
+
+run commands:-  app.js 
+
+check in the browser -using the root localhost:8080/  and  localhost:8080/testlisting
+
+
+// 3 . to enter inside folder run commands:- 
+
+     cd init // now we are in the init folder
+
+// stop the data initilization
+
+  cd ..
+
+
+// . to delete a review
+
+wanderlust> db.reviews.deleteOne({_id: ObjectId("6571572ec4b01f63c717c72c")})    
+
+
+
+
+type: Schema.Types.Mixed,
+    default:
+      "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    set: (v) =>
+      v === ""
+        ? "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        : v,
